@@ -1,0 +1,44 @@
+{
+  "name": "reactdnd-tutorial",
+  "version": "1.0.0",
+  "description": "React-DnDのチュートリアル (http://gaearon.github.io/react-dnd/docs-tutorial.html)",
+  "main": "scripts/app.js",
+  "dependencies": {
+    "react": "^0.14.5",
+    "react-dnd": "^2.0.2",
+    "react-dnd-html5-backend": "^2.0.2",
+    "react-dom": "^0.14.5"
+  },
+  "devDependencies": {
+    "browserify": "^6.2.0",
+    "envify": "^3.0.0",
+    "jest-cli": "^0.4.3",
+    "reactify": "^0.15.2",
+    "uglify-js": "~2.4.15",
+    "watchify": "^2.1.1"
+  },
+  "scripts": {
+    "start": "watchify -o scripts/bundle.js -v -d scripts/app.js",
+    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > scripts/bundle.min.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/egapool/reactdnd-tutorial.git"
+  },
+  "browserify": {
+    "transform": [
+      "reactify",
+      "envify"
+    ]
+  },
+  "jest": {
+    "rootDir": "./scripts"
+  },
+  "author": "egapool",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/egapool/reactdnd-tutorial/issues"
+  },
+  "homepage": "https://github.com/egapool/reactdnd-tutorial#readme"
+}
